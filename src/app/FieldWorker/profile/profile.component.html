@@ -1,0 +1,32 @@
+<div>
+    <div class="profile">My Profile</div>
+    <div>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>WorkType</th>
+            <th>District</th>
+            <th>Phone Number</th>
+            <th>Nic</th>
+            <th>ProfileImage</th>
+            <th>Certificates</th>
+            <th>Experience</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngIf="selectedFieldWorker">
+            <td class="px-1">{{selectedFieldWorker.name}}</td>
+            <td class="px-1">{{selectedFieldWorker.workType}}</td>
+            <td class="px-1">{{selectedFieldWorker.district}}</td>
+            <td class="px-1">{{selectedFieldWorker.phoneNumber}}</td>
+            <td class="px-1">{{selectedFieldWorker.nic}}</td>
+            <td class="px-1">{{selectedFieldWorker.profileImage}}</td>
+            <td class="px-1">{{selectedFieldWorker.certificates}}</td>
+            <td class="px-1">{{selectedFieldWorker.experience}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  
