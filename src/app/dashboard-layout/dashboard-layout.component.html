@@ -15,6 +15,7 @@
             <p class="drawer_text">Projects</p>
             <hr>
           </div>
+          
           <div *ngIf="role == 'customer'"
                class=" p-3 drawer_item_box row"
                [class.active]="isDrawerItemActive('Find')"
@@ -24,6 +25,8 @@
             <p class="drawer_text">Find</p>
             <hr>
           </div>
+          
+          
 
 
 
@@ -36,6 +39,7 @@
          <p class="drawer_text">Review & Rating</p>
          <hr>
      </div>
+  
 
           <div *ngIf="role == 'fieldWorker'"
                class="p-3 drawer_item_box row"
@@ -46,14 +50,27 @@
             <p class="drawer_text">Project Request</p>
             <hr>
           </div>
+
           <div *ngIf="role == 'fieldWorker'"
                class="p-3 drawer_item_box row"
                [class.active]="isDrawerItemActive('MyProfile')"
+               [routerLink]="['/dashboard/fieldworkerproject']"
+          >
+            <i class="fa-solid fa-bullhorn drawer_icon"></i>
+            <p class="drawer_text">Projects</p>
+            <hr>
+          </div>
+
+          <div *ngIf="role == 'fieldWorker'"
+               class="p-3 drawer_item_box row"
+               [class.active]="isDrawerItemActive('MyProfile')"
+               [routerLink]="['/dashboard/profile']"
           >
             <i class="fa-solid fa-bullhorn drawer_icon"></i>
             <p class="drawer_text">My Profile</p>
             <hr>
           </div>
+
           <div *ngIf="role == 'customer' || role == 'fieldWorker'"
                class="p-3 drawer_item_box row"
                [class.active]="isDrawerItemActive('Chat')"

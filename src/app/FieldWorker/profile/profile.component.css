@@ -1,18 +1,71 @@
 .profile {
-    text-align: center;
-    font-size: 35px;
-    font-weight: 400;
-  }
-  table {
-    width: 100%;
-  }
-  table, tr, th, td {
-    border: 1px solid black;
-  }
-  
-  th {
-    color: white;
-    background-color: black;
-    text-align: center;
-  }
-  
+  padding: 20px;
+  background-color: #EBE1B4;
+  overflow-y: auto; /* Make the container scrollable */
+  max-height: 100vh; /* Ensure it doesn't exceed the viewport height */
+}
+
+.profileTitle {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.selectedFieldWorker-card {
+  background: linear-gradient(135deg, #d9c74e 0%, #e9ecef 100%);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.selectedFieldWorker-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.selectedFieldWorkerCard-header {
+  background-color: #927c2e;
+  padding: 10px;
+  text-align: center;
+}
+
+.selectedFieldWorkerProfile-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+}
+
+.selectedFieldWorkerCard-body {
+  padding: 20px;
+}
+
+.selectedFieldWorker-detail {
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #555;
+}
+
+.selectedFieldWorker-detail strong {
+  color: #333;
+}
+
+.selectedFieldWorkercertificate,
+.selectedFieldWorkernic-link {
+  color: #e55730;
+  text-decoration: none;
+}
+
+.selectedFieldWorkercertificate:hover,
+.selectedFieldWorkernic-link:hover {
+  text-decoration: underline;
+}

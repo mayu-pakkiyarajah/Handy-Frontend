@@ -15,9 +15,24 @@ import {CloudinaryModule} from '@cloudinary/ng';
     CloudinaryModule
   ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
+
 })
 export class AppComponent {
   title = 'HandyHero';
+
+  // constructor( 
+  //   public signalrService: SignalrService,
+  //   //public authService: AuthService //3Tutorial
+  // ) 
+
+  // ngOnInit() {
+  //   this.signalrService.startConnection();
+  // }
+
+  // ngOnDestroy() {
+  //   this.signalrService.hubConnection.off("askServerResponse");
+  // }
+
 
 }

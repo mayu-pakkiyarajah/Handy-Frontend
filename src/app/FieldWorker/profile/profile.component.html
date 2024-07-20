@@ -1,32 +1,25 @@
 <div>
-    <div class="profile">My Profile</div>
-    <div>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>WorkType</th>
-            <th>District</th>
-            <th>Phone Number</th>
-            <th>Nic</th>
-            <th>ProfileImage</th>
-            <th>Certificates</th>
-            <th>Experience</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngIf="selectedFieldWorker">
-            <td class="px-1">{{selectedFieldWorker.name}}</td>
-            <td class="px-1">{{selectedFieldWorker.workType}}</td>
-            <td class="px-1">{{selectedFieldWorker.district}}</td>
-            <td class="px-1">{{selectedFieldWorker.phoneNumber}}</td>
-            <td class="px-1">{{selectedFieldWorker.nic}}</td>
-            <td class="px-1">{{selectedFieldWorker.profileImage}}</td>
-            <td class="px-1">{{selectedFieldWorker.certificates}}</td>
-            <td class="px-1">{{selectedFieldWorker.experience}}</td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="profile">
+      <h1 class="profileTitle">My Profile</h1>
+      <div *ngFor="let worker of fieldWorkers" class="selectedFieldWorker-card">
+        <div class="selectedFieldWorkerCard-header">
+          <img [src]="selectedFieldWorker.profileImage" alt="{{selectedFieldWorker.name}}" class="selectedFieldWorkerProfile-image" />
+        </div>
+        <div class="selectedFieldWorkerCard-body">
+          <p class="selectedFieldWorker-detail"><strong>Name:</strong> {{ selectedFieldWorker.name }}</p>
+          <p class="selectedFieldWorker-detail"><strong>Work Type:</strong> {{ selectedFieldWorker.workType }}</p>
+          <p class="selectedFieldWorker-detail"><strong>District:</strong> {{ selectedFieldWorker.district }}</p>
+          <p class="selectedFieldWorker-detail"><strong>Phone Number:</strong> {{ selectedFieldWorker.phoneNumber }}</p>
+          <p class="selectedFieldWorker-detail">
+            <strong>NIC:</strong> 
+            <a [href]="worker.nic" target="_blank" class="selectedFieldWorkernic-link">View</a>
+          </p>
+          <p class="selectedFieldWorker-detail">
+            <strong>Certificates:</strong> 
+            <a [href]="selectedFieldWorker.certificates" target="_blank" class="selectedFieldWorkercertificate-link">View</a>
+          </p>
+        </div>
+      </div>
     </div>
   </div>
   

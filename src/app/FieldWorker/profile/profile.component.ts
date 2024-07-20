@@ -2,6 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {FieldWorkersService} from "../../../Services/Admin/field-workers.service";
 import {CommonModule, NgForOf, NgIf} from "@angular/common";
 import { FieldWorkerService } from '../../../Services/fieldworker.service';
+import { UsersComponent } from '../../Admin/users/users.component';
+import { UsersService } from '../../../Services/Admin/users.service';
+
 
 @Component({
   selector: 'app-profile',
@@ -9,7 +12,9 @@ import { FieldWorkerService } from '../../../Services/fieldworker.service';
   imports: [
     NgForOf,
     NgIf,
-    CommonModule
+    CommonModule,
+    profileComponent,
+    UsersComponent
   ],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css',
@@ -17,10 +22,13 @@ import { FieldWorkerService } from '../../../Services/fieldworker.service';
 })
 export class profileComponent implements OnInit{
   selectedFieldWorker: any;
+  selectedCustomer : any;
 
   constructor(private fieldWorker: FieldWorkerService) {
   }
   fieldWorkers: any[] = [];
+
+
   ngOnInit() {
     const idString = localStorage.getItem('Id'); 
     if (idString !== null) {
@@ -47,5 +55,6 @@ export class profileComponent implements OnInit{
         console.error(`Error while getting fieldworker with id ${id}`, error);
       }
     );
-}
+  }
+
 }

@@ -8,7 +8,7 @@ import {DashboardLayoutComponent} from "./dashboard-layout/dashboard-layout.comp
 import {ProjectsComponent} from "./customer/projects/projects.component";
 import {FindComponent} from "./customer/find/find.component";
 import {PaymentComponent} from "./customer/payment/payment.component";
-import {ChatComponent} from "./chat/chat.component";
+//import {ChatComponent} from "./chat/chat.component";
 import {ComplaintComponent} from "./complaint/complaint.component";
 import {RouteGuard} from "../Common/RouteGuard";
 import {WorkerRequestComponent} from "./Admin/worker-request/worker-request.component";
@@ -22,6 +22,8 @@ import {ResetPasswordComponent} from "./reset-password/reset-password.component"
 import {StarRatingComponent} from "./star-rating/star-rating.component";
 import {TransactionComponent} from "./Admin/transaction/transaction.component";
 import { profileComponent } from './FieldWorker/profile/profile.component';
+import { FieldWorkerProjectsComponent } from './FieldWorker/fieldworkerproject/fieldworkerproject.component';
+
 
 
 
@@ -45,7 +47,7 @@ export const routes: Routes = [
       {path: 'projects', component: ProjectsComponent},
       {path: 'find', component: FindComponent},
       {path: 'payment', component: PaymentComponent},
-      {path:'chat', component: ChatComponent},
+      //{path:'chat', component: ChatComponent},
       {path: 'complaint', component: ComplaintComponent},
       {path: 'Review', component: ReviewComponent},
       {path: 'starrating',component: StarRatingComponent},
@@ -65,6 +67,7 @@ export const routes: Routes = [
       {path: 'projectrequest', component: ProjectRequestComponent},
       {path: 'transaction', component: TransactionComponent},
       {path: 'profile', component: profileComponent},
+      {path: 'fieldworkerproject', component: FieldWorkerProjectsComponent},
     ]
   },
   {path:'', component:LandingComponent, pathMatch:'full'},
