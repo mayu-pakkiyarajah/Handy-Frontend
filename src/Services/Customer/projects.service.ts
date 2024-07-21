@@ -13,4 +13,14 @@ export class ProjectsService {
   getMyProjects(userId: any): Observable<any>{
     return this.http.get<any>(`${this.baseUrl}Customer/myProject?id=${localStorage.getItem('Id')}`)
   }
+  getMyFieldWorkerProjects(userId: any): Observable<any>{
+    return this.http.get<any>(`${this.baseUrl}Customer/myProject?id=${localStorage.getItem('Id')}`)
+  }
+
+  // project.service.ts
+
+getProjectsByFieldWorkerId(fieldWorkerId: number): Observable<any> {
+  return this.http.get<any>(`https://localhost:7279/api/fieldworker/projectsbyworkerid?workerId=${fieldWorkerId}`);
+}
+
 }

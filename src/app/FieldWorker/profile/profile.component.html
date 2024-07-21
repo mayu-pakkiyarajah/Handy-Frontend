@@ -1,7 +1,8 @@
 <div>
     <div class="profile">
       <h1 class="profileTitle">My Profile</h1>
-      <div *ngFor="let worker of fieldWorkers" class="selectedFieldWorker-card">
+      <div *ngIf="selectedFieldWorker">
+      <div  class="selectedFieldWorker-card">
         <div class="selectedFieldWorkerCard-header">
           <img [src]="selectedFieldWorker.profileImage" alt="{{selectedFieldWorker.name}}" class="selectedFieldWorkerProfile-image" />
         </div>
@@ -12,13 +13,14 @@
           <p class="selectedFieldWorker-detail"><strong>Phone Number:</strong> {{ selectedFieldWorker.phoneNumber }}</p>
           <p class="selectedFieldWorker-detail">
             <strong>NIC:</strong> 
-            <a [href]="worker.nic" target="_blank" class="selectedFieldWorkernic-link">View</a>
+            <a [href]="selectedFieldWorker.nic" target="_blank" class="selectedFieldWorkernic-link">View</a>
           </p>
           <p class="selectedFieldWorker-detail">
             <strong>Certificates:</strong> 
             <a [href]="selectedFieldWorker.certificates" target="_blank" class="selectedFieldWorkercertificate-link">View</a>
           </p>
         </div>
+      </div>
       </div>
     </div>
   </div>

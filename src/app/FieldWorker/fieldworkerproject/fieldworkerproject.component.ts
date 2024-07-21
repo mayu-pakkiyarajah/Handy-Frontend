@@ -24,22 +24,40 @@ export class FieldWorkerProjectsComponent implements OnInit{
   }
 
   ngOnInit() {
-    this.loadProjects();
-  }
+    const fieldWorkerId = Number(localStorage.getItem('Id')); // Ensure this ID is a number
+    if (fieldWorkerId) {
+        this.loadProjects(fieldWorkerId);
+    } else {
+        console.error('FieldWorker ID is not available');
+    }
+}
 
-  loadProjects(){
-    let FieldWorkerId = localStorage.getItem('Id');
-    this.projectService.getMyProjects(FieldWorkerId).subscribe(
+  // loadProjects(){
+  //   let FieldWorkerId = localStorage.getItem('Id');
+  //   this.projectService.getMyProjects(FieldWorkerId).subscribe(
+  //     (data) => {
+  //       console.log(data)
+  //       this.projects = data;
+  //       this.projectsStatic = data.slice();
+  //     },
+  //     (error) => {
+  //       console.log("error while getting projects : ", error);
+  //     }
+  //   )
+  // }
+
+  loadProjects(fieldWorkerId: number) {
+    this.projectService.getProjectsByFieldWorkerId(fieldWorkerId).subscribe(
       (data) => {
-        console.log(data)
+        console.log(data);
         this.projects = data;
         this.projectsStatic = data.slice();
       },
       (error) => {
-        console.log("error while getting projects : ", error);
+        console.log("Error while getting projects: ", error);
       }
-    )
-  }
+    );
+}
 
   searchWord = "";
 
@@ -50,6 +68,7 @@ export class FieldWorkerProjectsComponent implements OnInit{
     console.log(this.projects);
     console.log(this.projectsStatic);
   }
+
   searchProject() {
     if (this.searchWord.trim() === '') {
       this.projects = this.projectsStatic.slice();
