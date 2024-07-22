@@ -65,4 +65,12 @@ export class CardComponent {
       console.error('Project or projectWorker is undefined');
     }
   }
+  navigateFunction2() {
+    if (this.project && this.project.projectWorker) {
+      this.router.navigate(['/dashboard/chat'], { queryParams: { worker: this.project.projectWorker } });
+    } else {
+      // Handle the case where project or projectWorker is undefined
+      console.error('Project or projectWorker is undefined');
+    }
+  }
 }

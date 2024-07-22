@@ -71,7 +71,7 @@
             <hr>
           </div>
 
-          <div *ngIf="role == 'customer' || role == 'fieldWorker'"
+          <!-- <div *ngIf="role == 'customer' || role == 'fieldWorker'"
                class="p-3 drawer_item_box row"
                [class.active]="isDrawerItemActive('Chat')"
                [routerLink]="['/dashboard/chat']"
@@ -79,7 +79,7 @@
             <i class="fa-brands fa-rocketchat drawer_icon"></i>
             <p class="drawer_text ">Chat</p>
             <hr>
-          </div>
+          </div> -->
           <div *ngIf="role == 'admin'"
                class="p-3 drawer_item_box row"
                [class.active]="isDrawerItemActive('Dashboard')"
